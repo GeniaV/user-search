@@ -1,0 +1,36 @@
+.sortPanel {
+  margin: 30px 0 30px 0;
+  display: flex;
+  column-gap: 10px;
+}
+
+.sortPanel__sort__btn {
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 12px;
+  padding: 5px;
+  max-width: 150px;
+  margin: 0;
+  cursor: pointer;
+  background-color: #00aefa;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  transition: .2s ease-in-out;
+}
+
+.sortPanel__sort__btn:hover {
+  opacity: 70%;
+  transition: .1s ease-in-out;
+}
+
+.sortPanel__title {
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.btn_active {
+  background-color: #fad800;
+  color: black;
+}
