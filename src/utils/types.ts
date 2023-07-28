@@ -28,7 +28,7 @@ export interface IUsers {
 
 export interface ILoginSearch {
     login: string,
-    sortType: string,
+    sortType?: string,
     perPage: number,
     page: number
 }

@@ -10,7 +10,7 @@ export function Search() {
   const [inputValue, setInputValue] = useState<string>("");
   const currentPage = useAppSelector(state => state.paginationReducer.page);
   const dispatch = useAppDispatch();
-  
+
   const handeButtonClick = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setInputValue(inputValue);

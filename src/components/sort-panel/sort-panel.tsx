@@ -6,14 +6,15 @@ import { SortingOption } from '../../utils/types';
 
 export function SortPanel() {
   const loginName = useAppSelector(state => state.loginSearchReducer.loginName);
+  const currentPage = useAppSelector(state => state.paginationReducer.page);
   const dispatch = useAppDispatch();
 
-  const handleSortingClick = (sortOpt: boolean, sort: string) => {
+  const handleSortingClick = (sort: string) => {
     getUsersByLoginBySortRepo({
       login: loginName,
       sortType: sort,
       perPage: 15,
-      page: 1
+      page: currentPage
     })
       .then((res) => dispatch(getUsersGitHub(res)))
       .catch(err => console.log(`Ошибка получения пользователей ${err.code}. ${err.message}`))
@@ -23,11 +24,11 @@ export function SortPanel() {
     <div className={styles.sortPanel}>
       <p className={styles.sortPanel__title}>Cортировать:</p>
       <button className={styles.sortPanel__sort__btn}
-        onClick={() => handleSortingClick(true, SortingOption.ASC)}>
-        По возрастанияю репозиториев
+        onClick={() => handleSortingClick(SortingOption.ASC)}>
+        По возрастанию репозиториев
       </button>
       <button className={styles.sortPanel__sort__btn}
-        onClick={() => handleSortingClick(false, SortingOption.DESC)}>
+        onClick={() => handleSortingClick(SortingOption.DESC)}>
         По убыванию репозиториев
       </button>
     </div>
