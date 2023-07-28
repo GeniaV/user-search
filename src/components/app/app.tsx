@@ -1,5 +1,5 @@
 import { List } from '../list/list';
-import { Search } from '../search/serch';
+import { Search } from '../search/search';
 import { SortPanel } from '../sort-panel/sort-panel';
 import styles from './app.module.css';
 
