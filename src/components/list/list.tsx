@@ -20,8 +20,7 @@ export function List() {
   useEffect(() => {
     const totalPagesCount = Math.ceil(totalCount / 15);
     setTotalPages(totalPagesCount);
-  }, [totalCount]);
-
+  }, [totalCount, currentPage]);
 
   let timerId: null | number | NodeJS.Timeout = null;
 
@@ -40,7 +39,6 @@ export function List() {
     timerId = setTimeout(() => {
       setLoading(false);
     }, 900);
-
   };
 
   const handlePageChange = (pageNumber: number) => {
@@ -48,6 +46,14 @@ export function List() {
       clearTimeout(timerId);
     }
     fetchData(pageNumber);
+  };
+
+  const handleBackClick = () => {
+    if (currentPage > 1) handlePageChange(currentPage - 1);
+  };
+
+  const handleNextClick = () => {
+    if (currentPage < totalPages) handlePageChange(currentPage + 1);
   };
 
   if (isLoading) {
@@ -72,8 +78,8 @@ export function List() {
           </button>
         )
       )}
-      {currentPage > 1 && <button className={styles.pagination}>Назад</button>}
-      {currentPage < totalPages && <button className={styles.pagination}>Вперед</button>}
+      {currentPage > 1 && <button className={styles.pagination} onClick={handleBackClick}>Назад</button>}
+      {currentPage < totalPages && <button className={styles.pagination} onClick={handleNextClick}>Вперед</button>}
     </ul>
   )
 };
