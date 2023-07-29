@@ -5,6 +5,7 @@ import { setPageNumber } from '../../store/paginationSlice';
 import { getUsersByLoginBySortRepo } from '../../utils/api';
 import { getUsersGitHub } from '../../store/usersSlice';
 import { Preloader } from '../preloader/preloader';
+import { getPagesArray } from '../../utils/functions';
 
 export function List() {
   const users = useAppSelector(state => state.usersReducer.items);
@@ -67,11 +68,13 @@ export function List() {
           <h2 className={styles.list__item__name}>{user.login}</h2>
         </li>
       )}
-      {totalPages > 1 && Array.from({ length: totalPages }, (_, index) => index + 1).map(
-        (pageNumber) => (
+      {totalPages > 1 && getPagesArray({ currentPage, totalPages }).map((pageNumber, index) =>
+        pageNumber === "..." ? (
+          <span key={`ellipsis-${index}`} className={styles.pagination__ellipsis}>...</span>
+        ) : (
           <button className={styles.pagination}
             key={pageNumber}
-            onClick={() => handlePageChange(pageNumber)}
+            onClick={() => typeof pageNumber === "number" && handlePageChange(pageNumber)}
             disabled={pageNumber === currentPage}
           >
             {pageNumber}

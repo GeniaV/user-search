@@ -33,7 +33,12 @@ export interface ILoginSearch {
     page: number
 }
 
-export enum SortingOption { 
-    ASC = "asc", 
+export enum SortingOption {
+    ASC = "asc",
     DESC = "desc"
+};
+
+export interface IPageArr {
+    currentPage: number,
+    totalPages: number
 };
