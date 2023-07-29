@@ -1,0 +1,25 @@
+.title {
+  display: flex;
+  width: 100%;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.text {
+  display: flex;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  width: 100%;
+  line-height: 100%;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.avatar {
+  border-radius: 20px;
+  margin-top: 15px;
+  width: 50%;
+}

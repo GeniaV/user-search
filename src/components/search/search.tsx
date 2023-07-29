@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import styles from './search.module.css';
 import { useAppDispatch, useAppSelector } from '../..';
-import { sendLoginForSearching } from '../../store/loginSearchSlice';
+import { sendLoginForSearching } from '../../redux/loginSearchSlice';
 import { getUsersByLoginBySortRepo } from '../../utils/api';
 import { SortingOption } from '../../utils/types';
-import { getUsersGitHub } from '../../store/usersSlice';
+import { getUsersGitHub } from '../../redux/usersSlice';
 
 export function Search() {
   const [inputValue, setInputValue] = useState<string>("");
@@ -21,7 +21,12 @@ export function Search() {
       perPage: 15,
       page: currentPage
     })
-      .then((res) => dispatch(getUsersGitHub(res)))
+      .then((res) => {
+        dispatch(getUsersGitHub(res));
+        if(res.items.length === 0) {
+          setInputValue('');
+        }
+      })
       .catch(err => console.log(`Ошибка получения пользователей ${err.code}. ${err.message}`))
   };
 

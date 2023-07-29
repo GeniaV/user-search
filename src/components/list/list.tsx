@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../..';
 import styles from './list.module.css';
-import { setPageNumber } from '../../store/paginationSlice';
+import { setPageNumber } from '../../redux/paginationSlice';
 import { getUsersByLoginBySortRepo } from '../../utils/api';
-import { getUsersGitHub } from '../../store/usersSlice';
+import { getUsersGitHub } from '../../redux/usersSlice';
 import { Preloader } from '../preloader/preloader';
 import { getPagesArray } from '../../utils/functions';
+import { useNavigate } from 'react-router-dom';
+import { fetchUserDetails } from '../../redux/thunks/fetchUserDetails';
 
 export function List() {
   const users = useAppSelector(state => state.usersReducer.items);
@@ -17,6 +19,8 @@ export function List() {
 
   const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const totalPagesCount = Math.ceil(totalCount / 15);
@@ -57,6 +61,11 @@ export function List() {
     if (currentPage < totalPages) handlePageChange(currentPage + 1);
   };
 
+  const handelUserClick = (username: string) => {
+    navigate(`/user/${username}`);
+    dispatch(fetchUserDetails(username));
+  };
+
   if (isLoading) {
     return <Preloader />
   }
@@ -64,7 +73,7 @@ export function List() {
   return (
     <ul className={styles.list}>
       {users && users.map((user) =>
-        <li className={styles.list__item} key={user.id}>
+        <li className={styles.list__item} key={user.id} onClick={() => handelUserClick(user.login)}>
           <h2 className={styles.list__item__name}>{user.login}</h2>
         </li>
       )}

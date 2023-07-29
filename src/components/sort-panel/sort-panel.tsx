@@ -1,7 +1,7 @@
 import styles from './sort-panel.module.css';
 import { getUsersByLoginBySortRepo } from '../../utils/api';
 import { useAppDispatch, useAppSelector } from '../..';
-import { getUsersGitHub } from '../../store/usersSlice';
+import { getUsersGitHub } from '../../redux/usersSlice';
 import { SortingOption } from '../../utils/types';
 
 export function SortPanel() {

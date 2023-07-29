@@ -4,9 +4,10 @@ import './normalize.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
-import store, { AppDispatch, RootState } from './store/store';
+import store, { AppDispatch, RootState } from './redux/store';
 import { Provider } from 'react-redux';
 import { App } from './components/app/app';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +15,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+    <BrowserRouter>
+        <Routes>
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

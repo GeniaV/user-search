@@ -2,13 +2,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import usersReducer from "./usersSlice";
 import loginSearchReducer from "./loginSearchSlice";
 import paginationReducer from "./paginationSlice";
+import userDetailsReducer from "./userDetailSlice";
 
 const store = configureStore({
   reducer: {
     usersReducer,
     loginSearchReducer,
-    paginationReducer
-  }
+    paginationReducer,
+    userDetailsReducer
+  },
 });
 
 export default store;
