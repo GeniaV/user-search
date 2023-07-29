@@ -1,0 +1,8 @@
+{
+  "short_name": "Поиск пользователя",
+  "name": "Интерфейс поиска пользователя",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/user-search/static/css/main.33a375c8.css",
+    "main.js": "/user-search/static/js/main.64f84a43.js",
+    "static/js/787.28cb0dcd.chunk.js": "/user-search/static/js/787.28cb0dcd.chunk.js",
+    "static/media/Roboto-Regular.eot": "/user-search/static/media/Roboto-Regular.30b57652c88c5dbd65de.eot",
+    "static/media/Roboto-Black.eot": "/user-search/static/media/Roboto-Black.d747b63eb41cdc64e3dd.eot",
+    "static/media/Roboto-Regular.ttf": "/user-search/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/Roboto-Black.ttf": "/user-search/static/media/Roboto-Black.cf56c1b149d0a5e8d7c6.ttf",
+    "static/media/Roboto-Black.woff": "/user-search/static/media/Roboto-Black.88d7f1b3ca9a9494d8e3.woff",
+    "static/media/Roboto-Regular.woff": "/user-search/static/media/Roboto-Regular.31012f9b3e3da44f87e8.woff",
+    "static/media/Roboto-Black.woff2": "/user-search/static/media/Roboto-Black.ae0c1d409f7d45d81c29.woff2",
+    "static/media/Roboto-Regular.woff2": "/user-search/static/media/Roboto-Regular.a25806274237d06e00a6.woff2",
+    "static/media/search.svg": "/user-search/static/media/search.c330ab1cebd5b878258d.svg",
+    "index.html": "/user-search/index.html",
+    "main.33a375c8.css.map": "/user-search/static/css/main.33a375c8.css.map",
+    "main.64f84a43.js.map": "/user-search/static/js/main.64f84a43.js.map",
+    "787.28cb0dcd.chunk.js.map": "/user-search/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33a375c8.css",
+    "static/js/main.64f84a43.js"
+  ]
+}
