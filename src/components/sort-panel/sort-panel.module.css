@@ -29,3 +29,9 @@
   font-weight: 900;
   font-size: 14px;
 }
+
+@media screen and (max-width: 345px) {
+  .sortPanel__sort__btn{
+    font-size: 10px;
+  }
+}
