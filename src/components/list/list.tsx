@@ -90,8 +90,8 @@ export function List() {
           </button>
         )
       )}
-      {currentPage > 1 && <button className={styles.pagination} onClick={handleBackClick}>Назад</button>}
-      {currentPage < totalPages && <button className={styles.pagination} onClick={handleNextClick}>Вперед</button>}
+      {currentPage > 1 && <button className={`${styles.pagination} ${styles.nav}`} onClick={handleBackClick}>Назад</button>}
+      {currentPage < totalPages && <button className={`${styles.pagination} ${styles.nav}`} onClick={handleNextClick}>Вперед</button>}
     </ul>
   )
 };

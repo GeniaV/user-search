@@ -70,3 +70,14 @@
   font-size: 16px;
 }
 
+@media screen and (max-width: 573px) {
+  .nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .pagination {
+    min-width: 30px;
+  }
+}

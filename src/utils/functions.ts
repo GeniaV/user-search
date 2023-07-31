@@ -1,7 +1,7 @@
 import { IPageArr } from "./types";
 
 export function getPagesArray({currentPage, totalPages}: IPageArr) {
-  const delta = 2; 
+  const delta = window.innerWidth <= 460 ? 1 : 2; 
   
   let range = [];
 
